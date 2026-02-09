@@ -70,9 +70,8 @@ for url in URLS:
     if prev_states.get(url) == "out" and current == "in":
         recovered_urls.append(url)
 
-# 復活があれば通知
-if recovered_urls:
-    notify(recovered_urls)
+notify(URLS)
+
 
 # 状態保存
 with open(STATE_FILE, "w", encoding="utf-8") as f:
